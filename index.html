@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>POSTEROUND</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.3/p5.min.js"></script>
+  <style>
+    * { margin: 0; padding: 0; -webkit-box-sizing: border-box; box-sizing: border-box; }
+    body { overflow: hidden; background: #111; }
+    canvas { display: block; }
+
+    .ui-layer {
+      position: fixed;
+      top: 0; left: 0;
+      width: 1600px; height: 900px;
+      pointer-events: none;
+    }
+
+    .logo-block {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -58%);
+              transform: translate(-50%, -58%);
+      text-align: center;
+    }
+
+    .logo-text {
+      font-family: 'Lilita One', cursive;
+      font-size: 128px;
+      color: #FFC400;
+      /* paint-order not supported in Chrome 87 — simulate stroke via text-shadow */
+      -webkit-text-stroke: 5px #111;
+      text-shadow:
+        -5px -5px 0 #111,
+         5px -5px 0 #111,
+        -5px  5px 0 #111,
+         5px  5px 0 #111,
+         8px  8px 0 #111;
+      line-height: 1;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .tagline {
+      font-family: 'Space Mono', monospace;
+      font-size: 16px;
+      color: #fff;
+      background: #111;
+      display: inline-block;
+      padding: 8px 22px;
+      margin-top: 18px;
+      border: 3px solid #FF3F7F;
+      line-height: 1.5;
+    }
+
+    .nav-cluster {
+      position: absolute;
+      bottom: 72px;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+              transform: translateX(-50%);
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: flex;
+      gap: 24px;
+      pointer-events: all;
+    }
+
+    .nav-btn {
+      background: #FFC400;
+      color: #111;
+      border: 4px solid #111;
+      font-family: 'Space Mono', monospace;
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 16px 36px;
+      cursor: pointer;
+      letter-spacing: 1px;
+      -webkit-transition: all 0.12s;
+              transition: all 0.12s;
+      -webkit-box-shadow: 5px 5px 0 #111;
+              box-shadow: 5px 5px 0 #111;
+      text-decoration: none;
+      display: block;
+      white-space: nowrap;
+    }
+
+    .nav-btn:hover {
+      background: #FF3F7F;
+      color: #fff;
+      -webkit-transform: translate(-2px, -2px);
+              transform: translate(-2px, -2px);
+      -webkit-box-shadow: 7px 7px 0 #111;
+              box-shadow: 7px 7px 0 #111;
+    }
+
+    .nav-btn:active {
+      -webkit-transform: translate(3px, 3px);
+              transform: translate(3px, 3px);
+      -webkit-box-shadow: 2px 2px 0 #111;
+              box-shadow: 2px 2px 0 #111;
+    }
+
+    .nav-btn.pink {
+      background: #FF3F7F;
+      color: #fff;
+    }
+    .nav-btn.pink:hover {
+      background: #FFC400;
+      color: #111;
+    }
+
+    .corner-tag {
+      position: absolute;
+      font-family: 'Space Mono', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #FFC400;
+      background: #111;
+      padding: 6px 12px;
+    }
+
+    .corner-tl { top: 28px; left: 36px; }
+    .corner-tr { top: 28px; right: 36px; }
+    .corner-bl { bottom: 28px; left: 36px; }
+    .corner-br { bottom: 28px; right: 36px; }
+
+    .question-strip {
+      position: absolute;
+      bottom: 168px;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+              transform: translateX(-50%);
+      background: #111;
+      border: 3px solid #FF3F7F;
+      padding: 9px 28px;
+      font-family: 'Space Mono', monospace;
+      font-size: 12px;
+      font-weight: 700;
+      color: #fff;
+      white-space: nowrap;
+      letter-spacing: 1px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- HTML UI overlay -->
+<div class="ui-layer">
+  <div class="corner-tag corner-tl">POSTEROUND &#169;2025</div>
+  <div class="corner-tag corner-tr">PROJECT DONE BY CADEN \ SONA \ NGAN</div>
+  <div class="corner-tag corner-bl">SIGNAL / FILTER / ENGAGE</div>
+  <div class="corner-tag corner-br">CREATIVE DESIGN</div>
+
+  <div class="logo-block">
+    <div class="logo-text">POSTEROUND</div>
+    <div class="tagline">"How do campus orgs design to signal intent + filter their audience?"</div>
+  </div>
+
+  <div class="question-strip">&#8599; FIND OUT WHY YOU'RE LOOKING BELOW</div>
+
+  <div class="nav-cluster">
+    <a class="nav-btn" href="https://editor.p5js.org/coterrell24/full/UmRw0Bc8T"> &#10022; SKETCH 1 &#10022;</a>
+    <a class="nav-btn pink" href="https://editor.p5js.org/coterrell24/full/SFuCynJhM"> &#10022; SKETCH 2 &#10022;</a>
+    <a class="nav-btn" href="#"> &#10022; SKETCH 3 &#10022; </a>
+  </div>
+</div>
+
+<script src="sketch.js"></script>
+</body>
+</html>
